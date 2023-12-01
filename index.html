@@ -137,7 +137,10 @@
         <div class="footertop">
             <div class="footertop-links">
             <div class="LISTFOOTER">
+                <div class="mini_main">
                 <h4 class="footer-h4">SHOP</h4>
+                <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            </div>
                 <div class="links_dis">
                     <P>RazerStores</P>
                     <P>RazerCafe</P>
@@ -150,7 +153,10 @@
                 </div>
             </div>
             <div class="LISTFOOTER">
+                <div class="mini_main">
                 <h4 class="footer-h4">EXPLORE</h4>
+                <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            </div>
                 <div class="links_dis">
                     <P>TECHNOLOGY</P>
                     <P>CROMA RGB</P>
@@ -160,7 +166,10 @@
                 </div>
             </div>
             <div class="LISTFOOTER">
+                <div class="mini_main">
                 <h4 class="footer-h4">SUPPORT</h4>
+                <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            </div>
                 <div class="links_dis">
                     <P>GET HELP</P>
                     <P>Registration & Warranty</P>
@@ -173,7 +182,10 @@
                 </div>
             </div>
             <div class="LISTFOOTER">
+                <div class="mini_main">
                 <h4 class="footer-h4">COMPANY</h4>
+                <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            </div>
                 <div class="links_dis">
                     <P>ABOUT US</P>
                     <P>CAREERS</P>
@@ -184,7 +196,10 @@
             </div>
         
             <div class="LISTFOOTER footericons">
+                <div class="mini_main">
                 <h4 class="footer-h4">FOLLOW US</h4>
+                <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            </div>
                 <div class="links_dis follow_links">
                     <i class="fa-brands fa-facebook" style="color: #999999;"></i>
                     <i class="fa-brands fa-instagram" style="color: #999999;"></i>
@@ -208,20 +223,34 @@
     </div>
     </Footer>
 </div>
-<script>const mainMenu = document.querySelector('.mainMenu');
+<script>
+    document.querySelectorAll('.mini_main').forEach(function (element) {
+    element.addEventListener('click', function () {
+        let links_dis = this.parentElement.querySelector('.links_dis');
+        let icon = this.parentElement.querySelector('.fa-plus')
+        if (links_dis.style.display === 'none') {
+            links_dis.style.display = 'block';
+            icon.style.transform='rotate(45deg)'
+            icon.style.transition='1s'
+        } else {
+            links_dis.style.display = 'none';
+            icon.style.transform='rotate(0deg)'
+            icon.style.transition='1s'
+        }
+    });
+});
+    const mainMenu = document.querySelector('.mainMenu');
     const closeMenu = document.querySelector('.closeMenu');
     const openMenu = document.querySelector('.openMenu');
-    const menu_items = document.querySelectorAll('.mainMenu li a');
+    let menu_items = document.querySelectorAll('.mainMenu li a');
     const backg = document.querySelector('.top');
     openMenu.addEventListener('click',show);
-    closeMenu.addEventListener('click',close);
     menu_items.forEach(item => {
         item.addEventListener('click',function(){
             close();
         })
     })
-
-
+    closeMenu.addEventListener('click',close);
     function show(){
     mainMenu.style.display = 'flex';
     mainMenu.style.top = '0px';
@@ -232,6 +261,8 @@
         mainMenu.style.top = '-200rem';
         backg.style.display = '';
     }
+
+
 </script>
 </body>
 </html>

@@ -347,6 +347,9 @@ p{
     border-top: #555555 solid 1px;
 
 }
+.fa-plus{
+    font-size: 0;
+}
 @media (max-width: 767px) {
     .links_dis{
         display: none;
@@ -365,6 +368,11 @@ p{
         width: 90%;
         
     }
+    .mini_main{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
     .LISTFOOTER{
         padding-bottom: 1rem;
         border-bottom: #555555 1px solid;
@@ -378,7 +386,18 @@ p{
         gap: 0;
     }
     .white{
-        color: white;
+     color: white;
     }
+    .fa-plus{
+        font-size: 1rem;
+    }
+    .expand{
+        display: flex;
+    }
+    .expand .fa-plus{
+        transform: rotate('45deg');
+        transition: 1s;
+    }
+
 
 }
