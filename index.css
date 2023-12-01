@@ -350,6 +350,11 @@ p{
 .fa-plus{
     font-size: 0;
 }
+@media(min-width: 768px){
+    .links_dis{
+        display: flex !important;
+    }
+}
 @media (max-width: 767px) {
     .links_dis{
         display: none;

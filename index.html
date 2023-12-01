@@ -228,8 +228,8 @@
     element.addEventListener('click', function () {
         let links_dis = this.parentElement.querySelector('.links_dis');
         let icon = this.parentElement.querySelector('.fa-plus')
-        if (links_dis.style.display === 'none') {
-            links_dis.style.display = 'block';
+       if (links_dis.style.display === 'none') {
+            links_dis.style.display = 'flex';
             icon.style.transform='rotate(45deg)'
             icon.style.transition='1s'
         } else {
